@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Currency = () => {
-    const {currency, dispatch} = useContext(AppContext);
+    const { dispatch} = useContext(AppContext);
 
     const updateCurrency = (value) => {
 
@@ -15,19 +15,18 @@ const Currency = () => {
     
     return (
         <div className='alert alert-secondary' style={{ marginLeft: '2rem', backgroundColor: 'lightgreen'}}>
-            <label for="currency">Currency ({currency}) </label> 
+            <label for="currency">Currency: </label> 
             <select
                     required='required'
                     type='number'
                     id='budget'
-                    value={currency}
                     style={{ marginLeft: '2rem' , size: 10, backgroundColor: 'lightgreen'}}
                     onChange={(event) => updateCurrency(event.target.value)}
                     >
-                <option value="$ Dollar">$ Dollar</option>
-                <option value="£ Pound">£ Pound</option>
-                <option value="€ Euro">€ Euro</option>
-                <option value="₹ Ruppee">₹ Ruppee</option>
+                <option value="$">$ Dollar</option>
+                <option value="£">£ Pound</option>
+                <option value="€">€ Euro</option>
+                <option value="₹">₹ Ruppee</option>
             </select>
         </div>
     );
